@@ -552,7 +552,7 @@ class SS2D(nn.Module):
         return out
 
 
-# pre_AFFM: 原 SFMamba
+# pre_AFFM
 class pre_AFFM(nn.Module):
     def __init__(self, input_dim):
         super(pre_AFFM, self).__init__()
@@ -587,7 +587,7 @@ class pre_AFFM(nn.Module):
         return fused_features
 
 
-# pre_DMSM: 原 MFMamba
+# pre_DMSM
 class pre_DMSM(nn.Module):
     def __init__(self, input_dim, scales):
         super(pre_DMSM, self).__init__()
@@ -609,7 +609,7 @@ class pre_DMSM(nn.Module):
         return fused_output
 
 
-# AFFM: 原 AdaptiveSFMamba，继承自 pre_AFFM
+# AFFM: 继承自 pre_AFFM
 class AFFM(pre_AFFM):
     def __init__(self, input_dim, adaptive_rate=0.3):
         super(AFFM, self).__init__(input_dim)
@@ -639,7 +639,7 @@ class AFFM(pre_AFFM):
         return fused_features
 
 
-# DMSM: 原 DynamicMFMamba，继承自 pre_DMSM
+# DMSM继承自 pre_DMSM
 class DMSM(pre_DMSM):
     def __init__(self, input_dim, scales, dynamic_factor=1.0):
         super(DMSM, self).__init__(input_dim, scales)
